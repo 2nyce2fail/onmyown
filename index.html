@@ -1,49 +1,139 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Bootstrap demo</title>
-    
+
     <!--Bootstrap CDN-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/3d23e90826.js" crossorigin="anonymous"></script>
 
     <!--My CSS-->
     <link rel="stylesheet" href="CSS\styles.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!--Navigation Bar-->
-            <nav class="navbar navbar-expand-sm sticky-top bg-info navbar-dark">
-                <div class="container-fluid">
-                    <!--Image Icon on Navbar-->
-                    <a class="navbar-brand" href="#"><img src="https://picsum.photos/id/1/50" alt="navbarMainLogo" width="30" height="24" class="d-inline-block align-text-center"/> Nyce</a> 
-                    <!--Navigation Toggler-->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="#navbarMain" aria-expanded="false" aria-label="Toggler">
-                        <span class="fa-solid fa-burger"></span>
-                    </button>                   <!--Navigation Items-->
-                    <div class="collapse navbar-collapse" id="navbarMain">
-                        <ul class="navbar-nav me-auto align-text-center">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="About.html">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Portfolio.html">Portfolio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-sm-none" href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <a class="d-none d-sm-inline" ><button type="button" class="btn btn-warning">Contact Me</button></a>
-                </div>
-            </nav>
+    <nav class="navbar navbar-expand-sm sticky-top bg-info navbar-dark">
+        <div class="container-fluid">
+            <!--Image Icon on Navbar-->
+            <a class="navbar-brand" href="#"><img src="https://picsum.photos/id/1/50" alt="navbarMainLogo" width="30"
+                    height="24" class="d-inline-block align-text-center" /> Nyce</a>
+            <!--Navigation Toggler-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="#navbarMain" aria-expanded="false" aria-label="Toggler">
+                <span class="fa-solid fa-burger"></span>
+            </button> <!--Navigation Items-->
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto align-text-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-sm-none" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="d-none d-sm-inline"><button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                    data-bs-target="#contactModal">Contact Me</button></a>
+        </div>
+    </nav>
     </header>
+
+
+    <!--Contact Form Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-md-down modal-lg">
+            <div class="modal-content ">
+                <div class="modal-header bg-info text-white border border-3 border-info">
+                    <h1 class="modal-title fs-5" id="contactModalLabel">Let's Connect!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-white border border-info border-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm">
+                                <form>
+                                    <div class="row my-2">
+                                        <div class="col">
+                                            <label for="firstname" class="sr-only">First name</label>
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                placeholder="First name" />
+                                        </div>
+                                        <div class="col">
+                                            <label for="lastname" class="sr-only">Last Name</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                placeholder="Last Name" />
+                                        </div>
+                                    </div>
+                                    <div class="row my-2">
+                                        <div class="col">
+                                            <label for="emailaddress" class="sr-only">Email Address</label>
+                                            <input type="email" class="form-control" id="emailaddress"
+                                                name="emailaddress" placeholder="Email Address" />
+                                        </div>
+                                    </div>
+                                    <div class="row my-2">
+                                        <div class="col">
+                                            <label for="subject" class="sr-only">Subject</label>
+                                            <input type="text" class="form-control" id="subject" name="subject"
+                                                placeholder="Subject" />
+                                        </div>
+                                    </div>
+                                    <div class="row my-2">
+                                        <label class="mb-2" for="contactmessage">Leave a message...</label>
+                                        <textarea class="form-control" id="contactmessage" name="contactmessage"
+                                            rows="8"></textarea>
+                                    </div>
+                                </form>
+                                <button class="btn btn-info">Send Message</button>
+                            </div>
+                            <div class="col-sm-12 ms-2 py-3 ms-3">
+                                <div class="row">
+                                    <div class="col">
+                                        <h2 class="fs-5 mb-4">Contact Me</h2>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <i class="fa-solid fa-location-dot"></i><strong> Address: </strong>123 Main
+                                            St<br>Virginia Beach, VA 23464
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col ">
+                                            <i class="fa-solid fa-phone"></i><strong> Phone:</strong> (804) 815-9158
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <i class="fa-solid fa-envelope"></i> <strong> Email:</strong>
+                                            2nyce2fail@gmail.com
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <i class="fa-regular fa-window-maximize"></i><strong> Website:</strong>
+                                            www.TyroneFullerJr.com
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -54,8 +144,10 @@
             <div class="row text-white mx-auto mt-5">
                 <h5 class="text-center">Find me on the web!</h5>
                 <div class="col my-3 d-none d-md-inline text-center">
-                    <a class="m-3 link-info text-decoration-none"><i class="fa-brands fa-facebook fa-xl"></i> Facebook</a>
-                    <a class="m-3 link-info text-decoration-none"><i class="fa-brands fa-linkedin fa-xl"></i> LinkedIn</a>
+                    <a class="m-3 link-info text-decoration-none"><i class="fa-brands fa-facebook fa-xl"></i>
+                        Facebook</a>
+                    <a class="m-3 link-info text-decoration-none"><i class="fa-brands fa-linkedin fa-xl"></i>
+                        LinkedIn</a>
                     <a class="m-3 link-info text-decoration-none"><i class="fa-brands fa-youtube fa-xl"></i> Youtube</a>
                     <a class="m-3 link-info text-decoration-none"><i class="fa-brands fa-github fa-xl"></i> GitHub</a>
                 </div>
@@ -80,11 +172,13 @@
                     <h6> Tyrone Fuller | <strong>All Rights Reserved</strong></h6>
                 </div>
             </div>
-            </div>
+        </div>
         </div>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
 
 </html>
